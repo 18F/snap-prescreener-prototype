@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+python-dotenv = "~=0.11.0"
+flake8 = "~=3.7.9"
+bandit = "~=1.6.2"
+
+[packages]
+flask = "~=1.1.1"
+flask-httpauth = "~=3.3.0"
+gunicorn = "~=20.0.4"
+requests = "~=2.23.0"
+
+[requires]
+python_version = "3.8.1"

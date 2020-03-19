@@ -1,0 +1,7 @@
+---
+applications:
+- name: snap-prescreener-prototype
+  buildpacks:
+    - python_buildpack
+  memory: 256M
+  command: make serve-prod
