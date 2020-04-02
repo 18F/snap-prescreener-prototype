@@ -44,3 +44,13 @@ fieldset legend {
   color: #2F4F4F;
   font-size: 14px;
 }
+
+footer {
+  color: white;
+  background-color: black;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 8px;
+}
