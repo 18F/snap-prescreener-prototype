@@ -58,3 +58,7 @@ footer {
 footer a {
   color: white;
 }
+
+footer div {
+  margin: 8px 0;
+}
