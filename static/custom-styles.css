@@ -1,8 +1,12 @@
 .alert {
-  background-color: #e52207;
+  background-color: red;
   color: white;
   padding: 8px;
   text-align: center;
+}
+
+.alert div {
+  margin: 8px 0;
 }
 
 h1 {
@@ -47,7 +51,7 @@ fieldset legend {
 
 footer {
   color: white;
-  background-color: black;
+  background-color: #1B1349;
   text-align: center;
   position: fixed;
   bottom: 0;
