@@ -19,7 +19,7 @@ check-all: style-check security-check
 serve: serve-local
 
 serve-local:
-	pipenv run gunicorn "app:create_app()" --reload
+	pipenv run gunicorn "app:create_app()" -b :7000 --reload
 
 serve-prod: install-prod
 	pipenv run gunicorn "app:create_app()"
