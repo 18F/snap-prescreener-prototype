@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, request
 from flask_httpauth import HTTPBasicAuth
 from os import path
-from snap_financial_factors import BenefitEstimate
+from snap_financial_factors.benefit_estimate import BenefitEstimate
 
 
 def create_app():
