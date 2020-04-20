@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e098ea06a83e35705c65e3947a12211841b8b218060c128b9f14676abba9c3f5"
+            "sha256": "5f24dcb355754a320d2caba6327c8df45820e6f1d68ec202841ab8048c81cf4e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -131,7 +131,7 @@
         "snap-api-prototype": {
             "editable": true,
             "git": "https://github.com/18F/snap-api-prototype.git",
-            "ref": "d1f39718855feec52e087f8967905751b5faeda1"
+            "ref": "24fc68de564f9e4669807ec14fa53c37878fe0ab"
         },
         "urllib3": {
             "hashes": [
