@@ -14,6 +14,7 @@ flask-httpauth = "~=3.3.0"
 gunicorn = "~=20.0.4"
 requests = "~=2.23.0"
 snap-api-prototype = {editable = true,git = "https://github.com/18F/snap-api-prototype.git",ref = "ars/setup-setup"}
+pyyaml = "~=5.3"
 
 [requires]
 python_version = "3.8.1"
