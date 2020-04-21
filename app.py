@@ -40,6 +40,8 @@ def create_app():
     @app.route('/calculate', methods=['POST'])
     @auth.login_required
     def forward_request_to_api():
-        request_json_data = request.get_json().to_dict()
+        request_json_data = request.get_json()
 
         return BenefitEstimate(request_json_data).calculate()
+
+    return app
