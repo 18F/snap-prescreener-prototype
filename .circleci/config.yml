@@ -29,6 +29,10 @@ jobs:
           name: Python style check
           command: make style-check
 
+      - run:
+          name: Run the server
+          command: make serve
+
       - save_cache:
           paths:
             - ./.venv
