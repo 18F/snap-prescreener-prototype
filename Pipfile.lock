@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "071b1ec6ce3acef6a92b51e1ac6ad032d7e44666b481f20e22c0453de77488ce"
+            "sha256": "e098ea06a83e35705c65e3947a12211841b8b218060c128b9f14676abba9c3f5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -134,7 +134,6 @@
                 "sha256:cc8955cfbfc7a115fa81d85284ee61147059a753344bc51098f3ccd69b0d7e0c",
                 "sha256:d13155f591e6fcc1ec3b30685d50bf0711574e2c0dfffd7644babf8b5102ca1a"
             ],
-            "index": "pypi",
             "version": "==5.3.1"
         },
         "requests": {
@@ -148,7 +147,7 @@
         "snap-api-prototype": {
             "editable": true,
             "git": "https://github.com/18F/snap-api-prototype.git",
-            "ref": "e5db8c920affee22bc6c842583c7da32f0460364"
+            "ref": "e31586b00c9c9da70f0e265e1d67716b28ac1e30"
         },
         "urllib3": {
             "hashes": [
@@ -253,7 +252,6 @@
                 "sha256:cc8955cfbfc7a115fa81d85284ee61147059a753344bc51098f3ccd69b0d7e0c",
                 "sha256:d13155f591e6fcc1ec3b30685d50bf0711574e2c0dfffd7644babf8b5102ca1a"
             ],
-            "index": "pypi",
             "version": "==5.3.1"
         },
         "six": {
