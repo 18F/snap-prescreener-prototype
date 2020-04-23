@@ -39,7 +39,7 @@ def create_app():
 
     @app.route('/calculate', methods=['POST'])
     @auth.login_required
-    def forward_request_to_api():
+    def call_api():
         request_json_data = request.get_json()
 
         return SnapEstimateEntrypoint(request_json_data).calculate()
