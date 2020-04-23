@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, request
 from flask_httpauth import HTTPBasicAuth
 from os import path
-from snap_financial_factors.benefit_estimate.benefit_estimate import BenefitEstimate
+from snap_financial_factors.benefit_estimate.snap_estimate_entrypoint import SnapEstimateEntrypoint
 
 
 def create_app():
@@ -42,6 +42,6 @@ def create_app():
     def forward_request_to_api():
         request_json_data = request.get_json()
 
-        return BenefitEstimate(request_json_data).calculate()
+        return SnapEstimateEntrypoint(request_json_data).calculate()
 
     return app
