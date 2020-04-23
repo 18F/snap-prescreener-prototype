@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e098ea06a83e35705c65e3947a12211841b8b218060c128b9f14676abba9c3f5"
+            "sha256": "c837cc42d186a833db8fc5ed56eb5e7bf017012ffbd6701bfccd51e223041ea1"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -11,6 +11,11 @@
             {
                 "name": "pypi",
                 "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            },
+            {
+                "name": "test-pypi",
+                "url": "https://test.pypi.org/simple/",
                 "verify_ssl": true
             }
         ]
@@ -71,6 +76,8 @@
         "itsdangerous": {
             "hashes": [
                 "sha256:321b033d07f2a4136d3ec762eac9f16a10ccd60f53c0c91af90217ace7ba1f19",
+                "sha256:72a1252c0b2cc2bcc351acf2cfe2ec0159d8578c54767d5c2aa67fd869346e55",
+                "sha256:ac4c9f590d59c36b7d2953f97fda415f2461280e5279650aafe1e593f129c4f7",
                 "sha256:b12271b2047cb23eeb98c8b5622e2e5c5e9abd9784a153e9d8ef9cb4dd09d749"
             ],
             "version": "==1.1.0"
@@ -91,6 +98,7 @@
                 "sha256:13d3144e1e340870b25e7b10b98d779608c02016d5184cfb9927a9f10c689f42",
                 "sha256:24982cc2533820871eba85ba648cd53d8623687ff11cbb805be4ff7b4c971aff",
                 "sha256:29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b",
+                "sha256:30323461f382a59bcb940be0adc5e0d6be5dfc6bd1c2c5cbe2d13b96414e1619",
                 "sha256:43a55c2930bbc139570ac2452adf3d70cdbb3cfe5912c71cdce1c2c6bbd9c5d1",
                 "sha256:46c99d2de99945ec5cb54f23c8cd5689f6d7177305ebff350a58ce5f8de1669e",
                 "sha256:500d4957e52ddc3351cabf489e79c91c17f6e0899158447047588650b5e69183",
@@ -145,9 +153,12 @@
             "version": "==2.23.0"
         },
         "snap-api-prototype": {
-            "editable": true,
-            "git": "https://github.com/18F/snap-api-prototype.git",
-            "ref": "e31586b00c9c9da70f0e265e1d67716b28ac1e30"
+            "hashes": [
+                "sha256:a1b3d07e2c73a2f04173b48c7e5b6e80b1b61554ecc530db913358d30410efc3",
+                "sha256:a8feb45801c68db2f98528f87b1b652bfd4f035ce18f620aae98a31bb64078f8"
+            ],
+            "index": "test-pypi",
+            "version": "==0.0.1"
         },
         "urllib3": {
             "hashes": [
@@ -167,6 +178,8 @@
     "develop": {
         "bandit": {
             "hashes": [
+                "sha256:1d0a4df27713462410157c705c3fea61c59e6e03473e65116e9b1d9659dd426e",
+                "sha256:1fc45ffddc63d5cc10c53a35cba5dd8a093567ab310c1048bcd03f32337da75a",
                 "sha256:336620e220cf2d3115877685e264477ff9d9abaeb0afe3dc7264f55fa17a3952",
                 "sha256:41e75315853507aa145d62a78a2a6c5e3240fe14ee7c601459d0df9418196065"
             ],

@@ -3,17 +3,22 @@ name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
 
+[[source]]
+name = "test-pypi"
+url = "https://test.pypi.org/simple/"
+verify_ssl = true
+
 [dev-packages]
-python-dotenv = "~=0.11.0"
-flake8 = "~=3.7.9"
-bandit = "~=1.6.2"
+python-dotenv = {version="~=0.11.0", index="pypi"}
+flake8 = {version="~=3.7.9", index="pypi"}
+bandit = {version="~=1.6.2", index="pypi"}
 
 [packages]
-flask = "~=1.1.1"
-flask-httpauth = "~=3.3.0"
-gunicorn = "~=20.0.4"
-requests = "~=2.23.0"
-snap-api-prototype = {editable = true, git = "https://github.com/18F/snap-api-prototype.git"}
+flask = {version="~=1.1.1", index="pypi"}
+flask-httpauth = {version="~=3.3.0", index="pypi"}
+gunicorn = {version="~=20.0.4", index="pypi"}
+requests = {version="~=2.23.0", index="pypi"}
+snap-api-prototype = {version="~=0.0.1", index="test-pypi"}
 
 [requires]
 python_version = "3.8.1"
