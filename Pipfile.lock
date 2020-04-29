@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c837cc42d186a833db8fc5ed56eb5e7bf017012ffbd6701bfccd51e223041ea1"
+            "sha256": "26567d04ce0063b56916b63bfbd151c7aa0415189c49128c3d79003edc009d0c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -37,10 +37,10 @@
         },
         "click": {
             "hashes": [
-                "sha256:8a18b4ea89d8820c5d0c7da8a64b2c324b4dabb695804dbfea19b9be9d88c0cc",
-                "sha256:e345d143d80bf5ee7534056164e5e112ea5e22716bbb1ce727941f4c8b471b9a"
+                "sha256:d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a",
+                "sha256:dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc"
             ],
-            "version": "==7.1.1"
+            "version": "==7.1.2"
         },
         "flask": {
             "hashes": [
@@ -154,11 +154,11 @@
         },
         "snap-api-prototype": {
             "hashes": [
-                "sha256:a1b3d07e2c73a2f04173b48c7e5b6e80b1b61554ecc530db913358d30410efc3",
-                "sha256:a8feb45801c68db2f98528f87b1b652bfd4f035ce18f620aae98a31bb64078f8"
+                "sha256:2c9ddb10ee69b3d70b16b3333b967f16e1323c0dde0466eaa38e12220fb46e2d",
+                "sha256:b4e14cd15e8e9730eb3ff508346d17973892b383b38f36205c0492482c7ccaa5"
             ],
             "index": "test-pypi",
-            "version": "==0.0.1"
+            "version": "==0.0.3"
         },
         "urllib3": {
             "hashes": [

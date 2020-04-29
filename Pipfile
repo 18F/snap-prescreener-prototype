@@ -18,7 +18,7 @@ flask = {version="~=1.1.1", index="pypi"}
 flask-httpauth = {version="~=3.3.0", index="pypi"}
 gunicorn = {version="~=20.0.4", index="pypi"}
 requests = {version="~=2.23.0", index="pypi"}
-snap-api-prototype = {version="~=0.0.1", index="test-pypi"}
+snap-api-prototype = {version="~=0.0.3", index="test-pypi"}
 
 [requires]
 python_version = "3.8.1"
