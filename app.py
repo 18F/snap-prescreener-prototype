@@ -1,8 +1,8 @@
 import os
-import requests
 from flask import Flask, render_template, request
 from flask_httpauth import HTTPBasicAuth
 from os import path
+from snap_financial_factors.benefit_estimate.snap_estimate_entrypoint import SnapEstimateEntrypoint
 
 
 def create_app():
@@ -39,19 +39,9 @@ def create_app():
 
     @app.route('/calculate', methods=['POST'])
     @auth.login_required
-    def forward_request_to_api():
+    def call_api():
         request_json_data = request.get_json()
 
-        api_username = os.environ['API_USERNAME']
-        api_password = os.environ['API_PASSWORD']
-        api_url = os.environ['API_URL']
-
-        response = requests.post(
-            api_url,
-            json=request_json_data,
-            auth=(api_username, api_password)
-        ).json()
-
-        return response
+        return SnapEstimateEntrypoint(request_json_data).calculate()
 
     return app
