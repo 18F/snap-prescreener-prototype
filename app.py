@@ -1,4 +1,5 @@
 import os
+import requests
 from flask import Flask, render_template, request
 from flask_httpauth import HTTPBasicAuth
 from os import path
@@ -42,6 +43,23 @@ def create_app():
     def call_api():
         request_json_data = request.get_json()
 
-        return SnapEstimateEntrypoint(request_json_data).calculate()
+        call_api_method = os.environ.get('CALL_API_METHOD', 'PYTHON_LIBRARY')
+
+        if call_api_method == 'PYTHON_LIBRARY':
+            return SnapEstimateEntrypoint(request_json_data).calculate()
+        elif call_api_method == 'WEB_API':
+            api_username = os.environ['API_USERNAME']
+            api_password = os.environ['API_PASSWORD']
+            api_url = os.environ['API_URL']
+
+            response = requests.post(
+                api_url,
+                json=request_json_data,
+                auth=(api_username, api_password)
+            ).json()
+
+            return response
+        else:
+            raise ValueError("Unknown method for calling API.")
 
     return app
