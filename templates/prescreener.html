@@ -190,40 +190,41 @@
                    name="homeowners_insurance_and_taxes"
                    class="usa-input" />
 
-              <label class="usa-label" for="utility_allowance">
-                Which of the following describes how you pay for utilities?:
-              </label>
-              <select class="usa-select" id="utility_allowance" name="utility_allowance">
-                <option value>- Select -</option>
-                <option value="HEATING_AND_COOLING">
-                  I pay separately for heat or AC.
-                </option>
-                <option value="HEATING_AND_COOLING">
-                  I have received a LIHEAP payment of $21 to help pay for heat this year.
-                </option>
-                <option value="BASIC_LIMITED_ALLOWANCE">
-                  I pay separately for two or more of the following: electricity, cooking fuel, water, garbage, or phone.
-                </option>
-                <option value="SINGLE_UTILITY_ALLOWANCE">
-                  I pay separately for just one of the following: electricity, cooking fuel, water, garbage, or phone.
-                </option>
-                <option value="PHONE">
-                  The only utility I pay for is my phone bill.
-                </option>
-                <option value="NONE">
-                  I don't pay separately for any utilities, and I don't pay a phone bill.
-                </option>
-              </select>
+              <div id="utility_allowance_question">
+                <label class="usa-label" for="utility_allowance">
+                  Which of the following describes how you pay for utilities?:
+                </label>
+                <select class="usa-select" id="utility_allowance" name="utility_allowance">
+                  <option value>- Select -</option>
+                  <option value="HEATING_AND_COOLING">
+                    I pay separately for heat or AC.
+                  </option>
+                  <option value="HEATING_AND_COOLING">
+                    I have received a LIHEAP payment of $21 to help pay for heat this year.
+                  </option>
+                  <option value="BASIC_LIMITED_ALLOWANCE">
+                    I pay separately for two or more of the following: electricity, cooking fuel, water, garbage, or phone.
+                  </option>
+                  <option value="SINGLE_UTILITY_ALLOWANCE">
+                    I pay separately for just one of the following: electricity, cooking fuel, water, garbage, or phone.
+                  </option>
+                  <option value="PHONE">
+                    The only utility I pay for is my phone bill.
+                  </option>
+                  <option value="NONE">
+                    I don't pay separately for any utilities, and I don't pay a phone bill.
+                  </option>
+                </select>
+              </div>
 
-              <!--
-                NOTE:
-                A small number of states and territories (AK, HI, TN, VA, and the Virgin Islands)
-                do not use standard utility allowance as part of their excess shelter deduction
-                calculations. These states use a household's actual utility costs instead of
-                a standardized allowance. Since none of our early potential partnership states
-                fall in this category, I'm skipping an input for raw utility costs for now;
-                will need to add later.
-              -->
+              <div id="actual_utilities_costs_question" class="hidden">
+                <label class="usa-label" for="actual_utilities_costs">
+                  Monthly utility bills:
+                </label>
+                <input id="actual_utilities_costs"
+                     name="actual_utilities_costs"
+                     class="usa-input" />
+              </div>
 
               <!-- SUBMIT BUTTON -->
               <input id="prescreener-form-submit"
@@ -275,6 +276,36 @@
           if (elem) {
               if (!elem.classList.contains('hidden')) {
                   elem.classList.add('hidden');
+              }
+          }
+      }
+
+      function showActualUtilitiesCosts () {
+          var utilityAllowance = document.getElementById('utility_allowance_question');
+          var actualUtilitiesCosts = document.getElementById('actual_utilities_costs_question');
+
+          if (utilityAllowance && actualUtilitiesCosts) {
+              if (actualUtilitiesCosts.classList.contains('hidden')) {
+                  actualUtilitiesCosts.classList.remove('hidden');
+              }
+
+              if (!utilityAllowance.classList.contains('hidden')) {
+                  utilityAllowance.classList.add('hidden');
+              }
+          }
+      }
+
+      function showStandardUtilitiesAllowance () {
+          var utilityAllowance = document.getElementById('utility_allowance_question');
+          var actualUtilitiesCosts = document.getElementById('actual_utilities_costs_question');
+
+          if (utilityAllowance && actualUtilitiesCosts) {
+              if (utilityAllowance.classList.contains('hidden')) {
+                  utilityAllowance.classList.remove('hidden');
+              }
+
+              if (!actualUtilitiesCosts.classList.contains('hidden')) {
+                  actualUtilitiesCosts.classList.add('hidden');
               }
           }
       }
@@ -383,5 +414,18 @@
       elderlyOrDisabledFalse.addEventListener('change', function (event) {
           hideMedicalExpensesForElderlyOrDisabled();
       });
+
+      var stateOrTerritory = document.getElementById('state_or_territory');
+
+      stateOrTerritory.addEventListener('change', function (event) {
+          var stateOrTerritoryAbbr = event.target.value;
+
+          if (['VA', 'AK', 'HI', 'TN'].indexOf(stateOrTerritoryAbbr) > -1) {
+              showActualUtilitiesCosts();
+          } else {
+              showStandardUtilitiesAllowance();
+          }
+      });
+
   </script>
 </html>
