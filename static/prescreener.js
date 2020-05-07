@@ -70,7 +70,6 @@ function responseToHTML (response) {
           html += ('<li style="color: red;">' + error + '.</li>')
       }
 
-      window.scrollTo(0, 0);
       return html;
     }
 
@@ -93,8 +92,6 @@ function responseToHTML (response) {
         return a.sort_order - b.sort_order;
     });
 
-    console.log('eligibility_factors', eligibility_factors)
-
     for (var i = 0; i < eligibility_factors.length; i++) {
         var eligibility_factor = eligibility_factors[i];
         name = eligibility_factor.name
@@ -111,7 +108,6 @@ function responseToHTML (response) {
     }
     html += '</div>';
 
-    window.scrollTo(0, 0);
     return html;
 }
 
@@ -120,11 +116,24 @@ function sendData() {
 
     // Define what happens on successful data submission.
     XHR.addEventListener("load", function(event) {
+        // Convert JSON response to HTML
         response = JSON.parse(event.target.responseText);
         resultHTML = responseToHTML(response);
-
         var results = document.getElementById('results');
         results.innerHTML = resultHTML;
+
+        // Scroll to top if the results are displayed next to the form, as opposed to below the form.
+        // Otherwise, scroll to bottom to put results into view.
+        // 640px is the tablet breakpoint in USWDS Grid system: https://designsystem.digital.gov/utilities/layout-grid/
+        var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+        if (width >= 640) {
+            window.scrollTo(0, 0);
+        } else {
+            // Source: https://stackoverflow.com/questions/11715646/scroll-automatically-to-the-bottom-of-the-page
+            var scrollingElement = (document.scrollingElement || document.body);
+            scrollingElement.scrollTop = scrollingElement.scrollHeight;
+        }
     });
 
     // Define what happens in case of error.
